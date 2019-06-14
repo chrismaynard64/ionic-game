@@ -6,4 +6,23 @@
   </ion-toolbar>
 </ion-header>
 
-<ion-content></ion-content>
+<ion-content>
+  <div>
+    <div>
+      <form action="">
+        <ion-item>
+            <ion-label>Message</ion-label>
+            <ion-input  placeholder="Enter Input" [(ngModel)]="intext" name="intext"></ion-input>
+          </ion-item>
+          <ion-button color="primary" (click)="send()">Send</ion-button>
+          </form>
+    </div>
+    <div>
+      <p *ngFor="let message of messages">{{message}}</p>
+    </div>
+
+
+ 
+  </div>
+
+</ion-content>

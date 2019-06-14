@@ -1,4 +1,6 @@
+import { UserService } from './../services/user.service';
 import { Component } from '@angular/core';
+import { User } from '../model/user';
 
 @Component({
   selector: 'app-tab1',
@@ -7,6 +9,14 @@ import { Component } from '@angular/core';
 })
 export class Tab1Page {
 
-  constructor() {}
+  currentUser: User = null;
+
+  constructor(private userService: UserService) {}
+
+ ngOnInit() {
+    this.userService.userSub.subscribe(u => {
+      this.currentUser = u;
+    });
+ }
 
 }

@@ -1,9 +1,22 @@
 <ion-header>
   <ion-toolbar>
-    <ion-title>
-      Tab Three
+    <ion-title>x
+   <div class="ion-float-left"> Tab Three</div>
+   <div class="ion-float-right"> {{auth.isAuthenticated() ? auth.currentUser.userName : 'Guest'}}</div> 
     </ion-title>
   </ion-toolbar>
 </ion-header>
 
-<ion-content></ion-content>
+<ion-content>
+<canvas width="440" height="480" class="gameboard" #game>
+
+
+</canvas>
+<div>
+    <ion-button color="primary"  (click)="left()">Left</ion-button>
+    <ion-button color="primary" (click)="right()">Right</ion-button>
+    <ion-button color="primary" (click)="up()">Up</ion-button>
+    <ion-button color="primary" (click)="down()">Down</ion-button>
+</div>
+
+</ion-content>
